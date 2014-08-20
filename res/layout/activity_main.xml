@@ -8,9 +8,31 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.max.helloworld.MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter name" />
+
+        <EditText
+            android:id="@+id/jDesc"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:gravity="top"
+            android:hint="Enter Description"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bDone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Done" />
 
 </RelativeLayout>
