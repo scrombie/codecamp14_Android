@@ -9,6 +9,7 @@
     tools:context="com.max.helloworld.MainActivity" >
 
     <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
@@ -23,9 +24,9 @@
             android:id="@+id/jDesc"
             android:layout_width="fill_parent"
             android:layout_height="200dp"
+            android:layout_marginTop="20dp"
             android:gravity="top"
-            android:hint="Enter Description"
-            android:layout_marginTop="20dp" />
+            android:hint="Enter Description" />
     </LinearLayout>
 
     <Button
@@ -34,5 +35,43 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:text="Done" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout1"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="True"
+            android:onClick="onRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="False"
+            android:onClick="onRadioButtonClicked" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/bankAmount"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_above="@+id/bDone"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter Amount in bank" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

@@ -19,9 +19,10 @@ public class AnotherActivity extends ActionBarActivity {
 		Intent i= getIntent();
 		String s = i.getStringExtra("name");
 		String d = i.getStringExtra("desc");
-		//int ii = i.getIntExtra("iValue", 0);
+		String b = i.getStringExtra("bBank");
+	    //int ii = i.getIntExtra("iValue", 0);
 		boolean f = i.getBooleanExtra("randB", false);
-		tv.setText("Hi My name is "+s+" \n \n "+ d);
+		tv.setText("Hi My name is "+s+" \n \nHeres a description of me: "+ d+" \n \nAre You Mad: "+f+" \n \n"+"Heres how much i have in my account: "+b );
 		
 	}
 

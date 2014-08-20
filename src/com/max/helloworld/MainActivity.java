@@ -9,12 +9,17 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	EditText name;
 	EditText desc;
 	Button bDone;
+	EditText bBank;
+	RadioGroup rg;
+	boolean b;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,10 @@ public class MainActivity extends ActionBarActivity {
 		name = (EditText)findViewById(R.id.name);
 		desc = (EditText)findViewById(R.id.jDesc);
 		bDone = (Button)findViewById(R.id.bDone);
+		bBank = (EditText)findViewById(R.id.bankAmount);
+		rg = (RadioGroup)findViewById(R.id.radioGroup1);
+		
+		
 		
 		
 		bDone.setOnClickListener(new OnClickListener() {
@@ -32,12 +41,30 @@ public class MainActivity extends ActionBarActivity {
 				Intent i = new Intent(MainActivity.this, AnotherActivity.class);
 				i.putExtra("name",name.getText().toString());
 				i.putExtra("desc",desc.getText().toString());
-				i.putExtra("randB", false);
+				i.putExtra("bBank",bBank.getText().toString());
+				i.putExtra("randB", b);
 				startActivity(i);
 				
 			}
 		});
 		
+	}
+	
+	public void onRadioButtonClicked(View view) {
+	    // Is the button now checked?
+	    boolean checked = ((RadioButton) view).isChecked();
+	    
+	    // Check which radio button was clicked
+	    switch(view.getId()) {
+	        case R.id.radio0:
+	            if (checked)
+	                b = true;
+	            break;
+	        case R.id.radio1:
+	            if (checked)
+	                b = false;
+	            break;
+	    }
 	}
 
 	@Override
